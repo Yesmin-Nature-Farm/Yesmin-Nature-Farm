@@ -55,12 +55,11 @@ function updateOrderForm() {
         type.style.opacity = "0.5";
         condition.style.opacity = "0.5";
 
-        // Eggs → Piece only
-        unit.value = "piece";
-
         unit.innerHTML = `
             <option value="piece">Piece</option>
         `;
+
+        unit.value = "piece";
 
     } else {
 
@@ -70,7 +69,6 @@ function updateOrderForm() {
         type.style.opacity = "1";
         condition.style.opacity = "1";
 
-        // Chicken → kg or bird
         unit.innerHTML = `
             <option value="kg">Kilogram (kg)</option>
             <option value="bird">Bird</option>
@@ -115,6 +113,7 @@ function getPrice(product, type, condition) {
     else if (product === "Pure Desi Egg") {
 
         price = 15;
+
     }
 
     return price;
@@ -159,30 +158,22 @@ function placeOrder() {
     // VALIDATION
 
     if (!quantity || quantity <= 0) {
-
         alert("Please enter quantity.");
-
         return;
     }
 
     if (!name) {
-
         alert("Please enter your name.");
-
         return;
     }
 
     if (!mobile) {
-
         alert("Please enter your mobile number.");
-
         return;
     }
 
     if (!location) {
-
         alert("Please enter your delivery location.");
-
         return;
     }
 
@@ -191,7 +182,6 @@ function placeOrder() {
 
     const price =
         getPrice(product, type, condition);
-
 
     const subtotal =
         price * quantity;
@@ -208,16 +198,13 @@ NEW ORDER
 Product: ${product}
 `;
 
-
     if (!product.includes("Egg")) {
 
         message +=
 `Type: ${type}
 Condition: ${condition}
 `;
-
     }
-
 
     message +=
 `Quantity: ${quantity}
@@ -248,33 +235,15 @@ Thank you.
 YESMIN NATURE FARM`;
 
 
+    // OPEN WHATSAPP DIRECTLY
 
-    // COPY MESSAGE
+    const whatsappURL =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(message);
 
-    if (navigator.clipboard) {
-
-        navigator.clipboard.writeText(message)
-
-        .then(function() {
-
-            alert(
-                "Order details copied successfully!\n\n" +
-                "Open WhatsApp and paste the order message."
-            );
-
-        })
-
-        .catch(function() {
-
-            alert(message);
-
-        });
-
-    } else {
-
-        alert(message);
-
-    }
+    window.location.href = whatsappURL;
 }
 
 
