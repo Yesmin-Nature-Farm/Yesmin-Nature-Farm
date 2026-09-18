@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YESMIN NATURE FARM</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+
+        <div class="logo">
+            🐔 YESMIN NATURE FARM
+            <small>Poultry & Farm Products</small>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#farm">Our Farm</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <p class="tag">LOCAL FARM • CANNING</p>
+
+            <h1>
+                আমাদের ফার্ম থেকে
+                <span>আপনার ঘরে।</span>
+            </h1>
+
+            <p class="hero-text">
+                Fresh poultry products, local service
+                এবং সহজ online ordering।
+            </p>
+
+            <a href="#products" class="btn">
+                Products দেখুন
+            </a>
+
+        </div>
+
+        <div class="farm-placeholder">
+
+            🐔
+
+            <h3>Your Farm Photo</h3>
+
+            <p>
+                পরে এখানে আপনার আসল
+                farm-এর ছবি বসাব।
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section id="products" class="section">
+
+<div class="container">
+
+<p class="tag">OUR PRODUCTS</p>
+
+<h2>আমাদের Products</h2>
+
+<p class="intro">
+আজকের দাম দেখতে নিচের products দেখুন।
+</p>
+
+
+<div class="products">
+
+
+<!-- SONALI -->
+
+<div class="product-card">
+
+<div class="icon">🐓</div>
+
+<h3>Sonali Chicken</h3>
+
+<div class="price-list">
+
+<p>মুরগি — <b>₹280/kg</b></p>
+
+<p>মোরগ — <b>₹380/kg</b></p>
+
+<p>Dressed — <b>+₹20/kg</b></p>
+
+</div>
+
+<button onclick="openOrder('Sonali')">
+Order Now
+</button>
+
+</div>
+
+
+<!-- DESI -->
+
+<div class="product-card">
+
+<div class="icon">🐔</div>
+
+<h3>Pure Desi Chicken</h3>
+
+<div class="price-list">
+
+<p>মুরগি — <b>₹330/kg</b></p>
+
+<p>মোরগ — <b>₹500/kg</b></p>
+
+<p>Dressed — <b>+₹20/kg</b></p>
+
+</div>
+
+<button onclick="openOrder('Pure Desi')">
+Order Now
+</button>
+
+</div>
+
+
+<!-- SONALI EGG -->
+
+<div class="product-card">
+
+<div class="icon">🥚</div>
+
+<h3>Sonali Egg</h3>
+
+<div class="price-list">
+
+<p>₹10 / piece</p>
+
+</div>
+
+<button onclick="openOrder('Sonali Egg')">
+Order Now
+</button>
+
+</div>
+
+
+<!-- DESI EGG -->
+
+<div class="product-card">
+
+<div class="icon">🥚</div>
+
+<h3>Pure Desi Egg</h3>
+
+<div class="price-list">
+
+<p>₹15 / piece</p>
+
+</div>
+
+<button onclick="openOrder('Pure Desi Egg')">
+Order Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FARM -->
+
+<section id="farm" class="section farm">
+
+<div class="container">
+
+<p class="tag">OUR FARM</p>
+
+<h2>ছোট Farm থেকে Local Brand</h2>
+
+<p>
+YESMIN NATURE FARM-এর লক্ষ্য Canning
+এবং আশেপাশের customers-এর কাছে
+quality poultry products পৌঁছে দেওয়া।
+</p>
+
+<p>
+ধীরে ধীরে আমরা product range,
+delivery coverage এবং online ordering
+system উন্নত করছি।
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ORDER -->
+
+<section id="order" class="section order-section">
+
+<div class="container order-box">
+
+<p class="tag">PLACE YOUR ORDER</p>
+
+<h2>আপনার Order দিন</h2>
+
+<p class="intro">
+আপনার প্রয়োজন অনুযায়ী quantity, delivery এবং payment option নির্বাচন করুন।
+</p>
+
+
+<label>Product</label>
+
+<select id="product">
+
+<option value="Sonali">Sonali Chicken</option>
+
+<option value="Pure Desi">
+Pure Desi Chicken
+</option>
+
+<option value="Sonali Egg">
+Sonali Egg
+</option>
+
+<option value="Pure Desi Egg">
+Pure Desi Egg
+</option>
+
+</select>
+
+
+<label>Type</label>
+
+<select id="type">
+
+<option value="মুরগি">মুরগি</option>
+
+<option value="মোরগ">মোরগ</option>
+
+</select>
+
+
+<label>Condition</label>
+
+<select id="condition">
+
+<option value="Live">Live</option>
+
+<option value="Dressed">
+Dressed
+</option>
+
+</select>
+
+
+<label>Quantity</label>
+
+<input
+type="number"
+id="quantity"
+placeholder="যেমন: 2"
+min="1"
+step="0.1">
+
+
+<label>Quantity Unit</label>
+
+<select id="unit">
+
+<option value="kg">
+Kilogram (kg)
+</option>
+
+<option value="bird">
+Bird
+</option>
+
+<option value="piece">
+Piece
+</option>
+
+</select>
+
+
+<label>Customer Name</label>
+
+<input
+type="text"
+id="name"
+placeholder="আপনার নাম">
+
+
+<label>Mobile Number</label>
+
+<input
+type="tel"
+id="mobile"
+placeholder="আপনার mobile number">
+
+
+<label>Delivery / Pickup</label>
+
+<select id="delivery">
+
+<option value="Home Delivery">
+Home Delivery
+</option>
+
+<option value="Farm Pickup">
+Farm Pickup
+</option>
+
+</select>
+
+
+<label>Payment Method</label>
+
+<select id="payment">
+
+<option value="COD">
+Cash on Delivery
+</option>
+
+<option value="UPI">
+UPI
+</option>
+
+<option value="Advance">
+Advance Payment
+</option>
+
+</select>
+
+
+<label>Delivery Location</label>
+
+<textarea
+id="location"
+placeholder="আপনার address / location"></textarea>
+
+
+<button onclick="placeOrder()">
+Place Order
+</button>
+
+</div>
+
+</section>
+
+<div class="container order-box">
+
+<p class="tag">PLACE YOUR ORDER</p>
+
+<h2>Order Details</h2>
+
+<label>Product</label>
+
+<select id="product">
+
+<option>Sonali</option>
+<option>Pure Desi</option>
+<option>Sonali Egg</option>
+<option>Pure Desi Egg</option>
+
+</select>
+
+
+<label>Type</label>
+
+<select id="type">
+
+<option>মুরগি</option>
+<option>মোরগ</option>
+
+</select>
+
+
+<label>Condition</label>
+
+<select id="condition">
+
+<option>Live</option>
+<option>Dressed</option>
+
+</select>
+
+
+<label>Quantity</label>
+
+<input
+type="number"
+id="quantity"
+placeholder="যেমন: 2"
+min="1">
+
+
+<label>Customer Name</label>
+
+<input
+type="text"
+id="name"
+placeholder="আপনার নাম">
+
+
+<label>Mobile Number</label>
+
+<input
+type="tel"
+id="mobile"
+placeholder="আপনার mobile number">
+
+
+<label>Delivery Location</label>
+
+<textarea
+id="location"
+placeholder="আপনার address / location"></textarea>
+
+
+<button onclick="placeOrder()">
+Place Order on WhatsApp
+</button>
+
+</div>
+
+</>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="section">
+
+<div class="container">
+
+<p class="tag">CONTACT</p>
+
+<h2>YESMIN NATURE FARM</h2>
+
+<p>
+📍 Canning, South 24 Parganas,
+West Bengal
+</p>
+
+<p>
+📱 WhatsApp:
+6296274158
+</p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 YESMIN NATURE FARM
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
